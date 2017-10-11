@@ -16,7 +16,7 @@ See https://matplotlib.org/examples/color/colormaps_reference.html
 for a complete list or make your own! We personally like the
 alternative colormaps 'terrain', 'inferno', and 'RdGy'
 '''
-colormap=plt.get_cmap('cubehelix')
+colormap=plt.get_cmap('inferno')
 
 # Read in text file, apply colormap, and save
 def main(fname='julia.txt'):
