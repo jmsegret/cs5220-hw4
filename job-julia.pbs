@@ -13,7 +13,9 @@
 # Change directories to where this script (and our executable) is.
 module load intel;
 cd "$PBS_O_WORKDIR"
+export MKL_MIC_ENABLE=1
 export OMP_NUM_THREADS=12
+export MIC_OMP_NUM_THREADS=240
 
 # Run the computations we want to.
 ./julia 5000

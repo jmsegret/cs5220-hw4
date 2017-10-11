@@ -1,10 +1,10 @@
 all: julia image
 
 julia:
-	$(CC) -std=c99 -o julia julia.c
+	$(CC) -std=c99 -mkl -qopenmp -o julia julia.c
 
 julia-xeonphi:
-	icc -axMIC-AVX512,CORE-AVX2 -offload-attribute-target=mic -qopenmp -o julia julia.c
+	icc -std=c99 -mkl -axMIC-AVX512,CORE-AVX2 -offload-attribute-target=mic -qopenmp -o julia julia.c
 
 image:
 	./julia; python visualize.py
